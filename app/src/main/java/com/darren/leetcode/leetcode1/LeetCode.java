@@ -5,6 +5,7 @@ import java.util.HashMap;
 /**
  * date  4/1/21  4:18 PM
  * author  DarrenHang
+ * 两数之和
  */
 class LeetCode {
 
@@ -21,6 +22,7 @@ class LeetCode {
     //暴力破解法
     //时间复杂度 O(n^2)
     //空间负责度 O(1)
+    //解题思路：通过两次循环将所有的数都相加一次，最终找到符合条件的一组下表
     public static int[] twoSum(int[] numbers, int target) {
         //数组长度
         int size = numbers.length;
@@ -36,7 +38,8 @@ class LeetCode {
 
     //哈希
     //时间复杂度 O(n)
-    //空间负责度 O(n)
+    //空间复杂度 O(n)
+    //解题思路：通过 hash 表的唯一性找到符合的两个数
     public static int[] twoSum_(int[] numbers, int target) {
         //数组长度
         int size = numbers.length;

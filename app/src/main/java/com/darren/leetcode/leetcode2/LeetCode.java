@@ -3,6 +3,7 @@ package com.darren.leetcode.leetcode2;
 /**
  * date  4/1/21  4:18 PM
  * author  DarrenHang
+ * 两数相加
  */
 class LeetCode {
 
@@ -23,7 +24,7 @@ class LeetCode {
         }
     }
 
-
+    //解题思路：新建链表，便利原链表，短链表位数不够用 0表示，累加当前两个链表的数值，用当前的值%10，大于10则进位，进入下一次的计算
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode result = new ListNode();
         ListNode node = result;

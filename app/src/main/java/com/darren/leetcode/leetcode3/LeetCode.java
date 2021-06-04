@@ -6,6 +6,7 @@ import java.util.HashMap;
 /**
  * date  4/1/21  4:18 PM
  * author  DarrenHang
+ * 无重复字符的最长子串
  */
 class LeetCode {
 
@@ -13,6 +14,9 @@ class LeetCode {
         System.out.println(lengthOfLongestSubstring("abcabcbb"));
     }
 
+    //时间复杂度为 O(n)
+    //空间负责度为 O(n)
+    //解题思路：用 hash 表记录当前字符的位置，如果发现存在字符串则更新字符串的索引并移动指针的位置，返回最长字符串
     public static int lengthOfLongestSubstring(String s) {
         //字符串长度
         int length = s.length();

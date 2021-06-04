@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * date  4/1/21  4:18 PM
  * author  DarrenHang
+ * 寻找两个正序数组的中位数
  */
 class LeetCode {
 
@@ -16,6 +17,8 @@ class LeetCode {
     }
 
     //暴力破解
+    //解题思路：判断当前数组是否为空，为空则返回另外一个数组的中位数（长度为奇数直接返回 middle，偶数返回((2middle-1)/2)）
+    //都不为空则创建新的数组，添加两个数组排序，然后返回中位数
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         //数组 1 长度
         int m = nums1.length;
