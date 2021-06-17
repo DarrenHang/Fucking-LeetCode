@@ -14,6 +14,9 @@ class LeetCode {
     }
 
     //暴力破解
+    //时间复杂度O(n^3)
+    //空间复杂度O(n)
+    //解题思路：便利两次字符串，记录最长回文子串的索引和回文的长度，最后截取返回最长的回文子串
     public static String longestPalindrome(String s) {
         char[] str = s.toCharArray();
         //获取字符串长度
