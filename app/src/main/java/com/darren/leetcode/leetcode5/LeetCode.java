@@ -15,10 +15,9 @@ class LeetCode {
 
     //暴力破解
     //时间复杂度O(n^3)
-    //空间复杂度O(n)
+    //空间复杂度O(1)
     //解题思路：便利两次字符串，记录最长回文子串的索引和回文的长度，最后截取返回最长的回文子串
     public static String longestPalindrome(String s) {
-        char[] str = s.toCharArray();
         //获取字符串长度
         int length = s.length();
         //长度为1直接返回
@@ -31,7 +30,7 @@ class LeetCode {
         int finalIndex = 0;
         for (int i = 0; i < length; i++) {
             for (int j = i + 1; j < length; j++) {
-                if (isReBack(str, i, j)) {
+                if (isReBack(s, i, j)) {
                     int newLength = j - i;
                     if (newLength > strLength) {
                         strLength = newLength;
@@ -45,14 +44,14 @@ class LeetCode {
     }
 
     //判断字符串是否回文
-    public static Boolean isReBack(char[] str, int start, int end) {
+    public static Boolean isReBack(String str, int start, int end) {
         //字符串的长度
         int length = end - start;
         //字符串的中心点
         int center = length / 2;
         //从左右向中心便利
         for (int i = start, j = end; i <= center + start; i++, j--) {
-            if (str[i] != str[j]) {
+            if (str.charAt(i) != str.charAt(j)) {
                 return false;
             }
         }
