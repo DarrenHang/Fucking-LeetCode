@@ -3,27 +3,42 @@ package com.darren.leetcode.leetcode6;
 /**
  * date  6/17/21  3:07 PM
  * author  DarrenHang
- * 整数反转
+ * Z 字形变换
  */
 class LeetCode {
 
     public static void main(String[] args) {
-        System.out.println(reverse(123456));
+        System.out.println(convert("PAYPALISHIRING",3));
     }
 
-    public static int reverse(int x) {
-        //0 直接返回
-        if (x == 0) return 0;
-        long n = 0;
-        //循环处理x
-        while (x != 0) {
-            //得到x的最后一位，依次累加
-            n = n * 10 + x % 10;
-            //去掉最后一位
-            x = x / 10;
+    public static String convert(String s, int numRows) {
+        //如果字符串为空或者字符串长度为1或者行数为1，直接返回字符串
+        if (s == null || s.length() < 2 || numRows <= 1) return s;
+        //创建对应的行数
+        StringBuilder[] builders = new StringBuilder[numRows];
+        //初始化 StringBuilder 数组
+        for (int i = 0; i < numRows; i++) {
+            builders[i] = new StringBuilder();
         }
-        //如果大于最大或者小于最小则返回0，其他返回n
-        return (n > Integer.MAX_VALUE || n < Integer.MIN_VALUE) ? 0 : (int) n;
+        //方向：1向下，-1向上
+        int dir = 1;
+        //初始索引
+        int index = 0;
+        //便利字符串
+        for (char c : s.toCharArray()) {
+            //添加字符
+            builders[index].append(c);
+            index += dir;
+            //当索引为 0 或者 numRows-1 时转变方向
+            if (index == 0 || index == numRows - 1) {
+                dir = -dir;
+            }
+        }
+        StringBuilder result = new StringBuilder();
+        for (StringBuilder sb : builders) {
+            result.append(sb);
+        }
+        return result.toString();
     }
 
 }
