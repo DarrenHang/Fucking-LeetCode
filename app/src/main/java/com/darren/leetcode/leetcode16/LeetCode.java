@@ -21,7 +21,7 @@ class LeetCode {
         int result = nums[0] + nums[1] + nums[2];
         //数组长度
         int length = nums.length;
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < length - 1 ; i++) {
             int currentValue = nums[i];
             //左指针
             int left = i + 1;
