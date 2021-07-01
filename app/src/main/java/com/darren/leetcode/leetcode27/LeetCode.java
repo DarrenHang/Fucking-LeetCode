@@ -14,7 +14,7 @@ class LeetCode {
     public static int removeElement(int[] nums, int val) {
         int length = nums.length;
         if (nums == null || length == 0) return 0;
-        if (length == 1) return nums[0] == val ? 1 : 0;
+        if (length == 1) return nums[0] == val ? 0 : 1;
         int current = 0;
         for (int i = 0; i < length; i++) {
             if (nums[i] != val) {
