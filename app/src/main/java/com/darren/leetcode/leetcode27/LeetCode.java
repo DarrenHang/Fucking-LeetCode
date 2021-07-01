@@ -18,8 +18,8 @@ class LeetCode {
         int current = 0;
         for (int i = 0; i < length; i++) {
             if (nums[i] != val) {
-                current++;
                 nums[current] = nums[i];
+                current++;
             }
         }
         return current;
